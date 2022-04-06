@@ -30,11 +30,19 @@ void imprimeVetor(int* vetor, int tam){
 }
 
 int main(){
+    // inicializa as variaveis que armazenarao os vetores
+    int* v1;
+    int* v2;
     
-    int* v1 = criaVetor1(5);
+    // ENTRADA
+
+    // PROCESSAMENTO
+
+    // SAIDA
+    v1 = criaVetor1(5);
     imprimeVetor(v1, 5);
 
-    int* v2 = (int*) malloc (5 * sizeof(int));
+    v2 = (int*) malloc (5 * sizeof(int));
     criaVetor2(5, v2);
     imprimeVetor(v2, 5);
 
