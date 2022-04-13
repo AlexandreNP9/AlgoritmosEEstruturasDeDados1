@@ -1,6 +1,17 @@
 #include "tad-data.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+/****************************
+ * DEFINIÇÃO DOS DADOS
+****************************/
+
+struct data{
+    int dia;
+    int mes;
+    int ano;
+};
 
 /****************************
  * IMPLEMENTAÇÃO
@@ -23,4 +34,10 @@ void data_desalocar(Data** endereco){
 
 void data_imprimir(Data* d){
     printf("%02d/%02d/%02d\n", d->dia, d->mes, d->ano);
+}
+
+bool validarData(Data* d){
+    
+    
+    return true;
 }

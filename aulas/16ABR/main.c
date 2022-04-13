@@ -1,6 +1,7 @@
+#include "tad-data.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "tad-data.h"
+#include <stdbool.h>
 
 int main(){
     
