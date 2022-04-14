@@ -31,7 +31,25 @@ Vetor* vet_criar(){
 };
 
 bool vet_anexar(Vetor* v, int elemento){
+    bool resp = false;
+
+    for (int i = 0; i<sizeof(v->vet); i++){
+        //primeiro elemento
+        if (v->vet[0] == NULL){
+            (v->vet)[0] = elemento;
+            resp = true;
+            break;
+        }
+        
+        //elementos no meio
+        else if (v->vet[i-1] == NULL){
+            (v->vet)[i] = elemento;
+            resp = true;
+            break;
+        }
+    }
     
+    return resp;
 };
 
 /*
