@@ -5,11 +5,12 @@
 
 int main(){
 	Vetor* v = vet_criar();
-/*
 
 	vet_anexar(v, 10);
 	vet_anexar(v, 20);
 	vet_anexar(v, 30);
+
+/*
 	vet_imprimir(v); // [10,20,30]
 	
 	vet_inserir(v, 15, 1);

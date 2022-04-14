@@ -30,13 +30,12 @@ Vetor* vet_criar();
  * RETORNO: true se a inserção foi realizada com sucesso e false caso contrário
  */
 
-/*
+
 bool vet_anexar(Vetor* v, int elemento){
     int tamanho = sizeof(v);
     printf("%d, v");
 
 };
-*/
 
 // 3. Inserir um elemento em qualquer posição da sequência
 /**

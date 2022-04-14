@@ -30,8 +30,11 @@ Vetor* vet_criar(){
     return v;
 };
 
+bool vet_anexar(Vetor* v, int elemento){
+    
+};
+
 /*
-bool vet_anexar(Vetor* v, int elemento);
 bool vet_inserir(Vetor* v, int elemento, int posicao);
 bool vet_substituir(Vetor* v, int posicao, int novoElemento);
 bool vet_removerPosicao(Vetor* v, int posicao, int* endereco);
