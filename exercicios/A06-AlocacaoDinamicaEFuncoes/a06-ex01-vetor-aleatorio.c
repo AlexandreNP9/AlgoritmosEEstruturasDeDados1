@@ -3,6 +3,7 @@
 #include<string.h>
 #include<stdbool.h>
 
+/*
 //com calloc
 int* criaVetor1(int tam){
     int* v = (int*)calloc(tam, sizeof(int));
@@ -28,15 +29,25 @@ void imprimeVetor(int* vetor, int tam){
     }
     printf("]\n");
 }
+*/
+
+
+
+
 
 int main(){
+    // ENTRADA
     // inicializa as variaveis que armazenarao os vetores
+    int tam1 = 5;
     int* v1;
+
+    int tam2 = 3;
     int* v2;
     
-    // ENTRADA
-
     // PROCESSAMENTO
+    v1 = criaVetorAleatorio1(tam1, v1);
+
+    v2 = criaVetorAleatorio1(tam2, v2);
 
     // SAIDA
     v1 = criaVetor1(5);
