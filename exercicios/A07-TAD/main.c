@@ -10,12 +10,12 @@ int main(){
 	vet_anexar(v, 20);
 	vet_anexar(v, 30);
 
-/*
-	vet_imprimir(v); // [10,20,30]
-	
+	vet_imprimir(v);// [10, 20, 30]
+
 	vet_inserir(v, 15, 1);
 	vet_imprimir(v); // [10,15,20,30]
 	
+/*
 	vet_inserir(v, 5, 0);
 	vet_imprimir(v); // [5,10,15,20,30]
 	
