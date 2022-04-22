@@ -3,24 +3,6 @@
 #include<string.h>
 #include<stdbool.h>
 
-/*
-//com calloc
-int* criaVetor1(int tam){
-    int* v = (int*)calloc(tam, sizeof(int));
-    for (int i=0; i < tam; i++){
-        v[i] = rand();
-    }
-
-    return v;
-}
-
-//com malloc
-void criaVetor2(int tam, int* endereco){
-    for (int i=0; i < tam; i++){
-        endereco[i] = rand();
-    }
-}
-
 void imprimeVetor(int* vetor, int tam){
     printf("[");
     for (int i=0; i < tam; i++){
@@ -29,34 +11,51 @@ void imprimeVetor(int* vetor, int tam){
     }
     printf("]\n");
 }
-*/
 
+//com return
+int* criaVetorAleatorio1(int* vetor, int tamanho){
+    vetor = (int*) calloc(tamanho, sizeof(int));
 
+    for (int i=0; i<tamanho; i++){
+        vetor[i] = rand() % 10;
+    }
 
+    return vetor;
+}
+
+//com metodo scanf
+void criaVetorAleatorio2(int* vetor, int* tamanho){
+    for (int i=0; i<*tamanho; i++){
+        vetor[i] = rand() % 10;
+    }
+}
 
 
 int main(){
     // ENTRADA
-    // inicializa as variaveis que armazenarao os vetores
+    // inicializa as variaveis que armazenarao os vetores e os enderecos na heap
     int tam1 = 5;
     int* v1;
 
     int tam2 = 3;
     int* v2;
+    v2 = (int*) calloc(tam2, sizeof(int));
     
     // PROCESSAMENTO
-    v1 = criaVetorAleatorio1(tam1, v1);
+    //cria vetor
+    v1 = criaVetorAleatorio1(v1, tam1);
 
-    v2 = criaVetorAleatorio1(tam2, v2);
+    criaVetorAleatorio2(v2, &tam2);
 
     // SAIDA
-    v1 = criaVetor1(5);
-    imprimeVetor(v1, 5);
+    imprimeVetor(v1, tam1);
 
-    v2 = (int*) malloc (5 * sizeof(int));
-    criaVetor2(5, v2);
-    imprimeVetor(v2, 5);
+    imprimeVetor(v2, tam2);
 
+    free(v1);
+    v1 = NULL;
+    free(v2);
+    v2 = NULL;
 
     return 0;
 }
