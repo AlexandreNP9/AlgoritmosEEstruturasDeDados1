@@ -12,8 +12,6 @@ void imprimeVetor(int* vetor, int tam){
 }
 
 bool dobrar (int* v, int tamAntigo, int* novoVetor, int novoTam){
-    novoVetor = (int*) calloc(novoTam, sizeof(int));
-    
     int i = 0;
     
     for (int i = 0; i<tamAntigo; i++){
@@ -22,9 +20,11 @@ bool dobrar (int* v, int tamAntigo, int* novoVetor, int novoTam){
 
     free(v);
     v = novoVetor;
+
 }
 
 int main(){
+    // ENTRADA
     int tamanho = 5;
     int* vetor;
     vetor = (int*) calloc(tamanho, sizeof(int));
@@ -33,12 +33,16 @@ int main(){
     vetor[2] = 30;
     vetor[3] = 40;
     vetor[4] = 50;
-    imprimeVetor(vetor, tamanho);
 
+    // PROCESSAMENTO
     int novoTamanho = 10;
     int* novoVetor;
-    dobrar(vetor, tamanho, novoVetor, novoTamanho);
+    novoVetor = (int*) calloc(novoTamanho, sizeof(int));
 
+    dobrar(vetor, tamanho, novoVetor, novoTamanho);
+    vetor = novoVetor;
+
+    // SAIDA
     imprimeVetor(vetor, novoTamanho);
     
     return 0;
