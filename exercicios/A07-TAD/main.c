@@ -24,15 +24,15 @@ int main(){
 	    vet_imprimir(v); // [5,15,20,30]
 	}
 
-/*		
+
 	// if (vet_removerPosicao(v, 10, &elemento) == false){
 	if (!vet_removerPosicao(v, 10, &elemento)){
 	    printf("Remocao invalida\n");
-	} 
-	
+	}
+
 	char str[200];
 	vet_toString(v, str);
-	printf("%s", str); //[5,15,20,30]
-*/
+	printf("%s\n", str); //[5,15,20,30]
+
 	return 0;
 }
