@@ -34,12 +34,29 @@ Vetor* vet_criar(){
 
 //2
 bool vet_anexar(Vetor* v, int elemento){
+    if (v->qtd == v->tam){
+        int* novoV;
+        v->tam = 2*v->tam;
+        novoV = (int*) calloc(v->tam, sizeof(int));
+        dobrar(v, novoV, v->tam);
+        v->vet = novoV;
+    } else {
+        v->vet[v->qtd] = elemento;
+        v->qtd++;
+    }
 
-    v->vet[v->qtd] = elemento;
-    v->qtd++;
-    
     return true;
 };
+
+void dobrar (int* v, int* novoV, int tam){
+    for (int i = 0; i<tam; i++){
+        novoV[i] = v[i];
+    }
+
+    free(v);
+    v = novoV;
+
+}
 
 //3
 bool vet_inserir(Vetor* v, int elemento, int posicao){
