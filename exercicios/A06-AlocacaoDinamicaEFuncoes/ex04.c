@@ -3,23 +3,23 @@
 #include <stdbool.h>
 
 void imprimeVetor(int* vetor, int tam){
+    //imprimir o vetor bonitinho
     printf("[");
-    for (int i=0; i < tam; i++){
-        printf("%d", vetor[i]);
-        if(i < tam-1) printf(",");
+    for (int i = 0; i<tam-1; i++){
+        printf("%d, ", vetor[i]);
     }
+    printf("%d", vetor[tam-1]);
     printf("]\n");
+
 }
 
-bool dobrar (int* v, int tamAntigo, int* novoVetor, int novoTam){
-    int i = 0;
-    
-    for (int i = 0; i<tamAntigo; i++){
-        novoVetor[i] = v[i];
+bool dobrar (int* v, int* novoV, int tam){
+    for (int i = 0; i<tam; i++){
+        novoV[i] = v[i];
     }
 
     free(v);
-    v = novoVetor;
+    v = novoV;
 
 }
 
@@ -35,15 +35,13 @@ int main(){
     vetor[4] = 50;
 
     // PROCESSAMENTO
-    int novoTamanho = 10;
-    int* novoVetor;
-    novoVetor = (int*) calloc(novoTamanho, sizeof(int));
-
-    dobrar(vetor, tamanho, novoVetor, novoTamanho);
-    vetor = novoVetor;
-
+    int* novoV;
+    novoV = (int*) calloc(2*tamanho, sizeof(int));
+    dobrar(vetor, novoV, tamanho);
+    vetor = novoV;
+    
     // SAIDA
-    imprimeVetor(vetor, novoTamanho);
+    imprimeVetor(vetor, tamanho);
     
     return 0;
 }
